@@ -1,10 +1,11 @@
-import Example from "./components/Example";
+import Splash from "./pages/Splash";
 import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   return (
+    // <ChakraProvider theme={theme}>
     <ChakraProvider>
-      <Example></Example>
+      <Splash></Splash>
     </ChakraProvider>
   );
 }
