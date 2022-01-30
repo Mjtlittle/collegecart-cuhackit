@@ -1,5 +1,7 @@
 import { Button, Container, Flex, Spacer, Img, Image } from "@chakra-ui/react";
 import { Nav } from '../components/Nav'
+import { Listing } from '../components/Listing'
+
 const Home = () => {
   return (
     <>
@@ -8,6 +10,7 @@ const Home = () => {
         <Flex py={0}>
           This is Home
         </Flex>
+        <Listing/>
       </Container>
     </>
   );

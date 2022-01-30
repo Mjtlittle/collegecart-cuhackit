@@ -8,7 +8,7 @@ const Nav = () => {
         <NextLink href='/home' passHref>
           <Link>
             <Box w='48vw' h='50px' bg='lightblue'>
-              <Image src="/images/logo.svg" alt="Home"/>
+              <Image src="/images/logo.svg" alt="Home" maxH={'10vh'}/>
             </Box>
           </Link>
         </NextLink>
