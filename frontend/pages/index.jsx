@@ -38,7 +38,7 @@ const Splash = () => {
       h="100vh"
       maxW="container.xl"
       p={6}
-      backgroundImage="url('/images/tillman-splash.jpeg')"
+      backgroundImage="url('/images/cc_splash.jpg')"
       backgroundPosition="35% 50%"
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
