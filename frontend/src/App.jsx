@@ -1,4 +1,5 @@
 import Splash from "./pages/Splash";
+import Home from "./pages/Home";
 import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     // <ChakraProvider theme={theme}>
     <ChakraProvider>
       <Splash></Splash>
+      {/* <Home></Home> */}
     </ChakraProvider>
   );
 }
