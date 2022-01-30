@@ -8,7 +8,7 @@ import { User } from '../users/entities/user.entity';
 import CreateListingDto from './dto/CreateListingDto';
 import { dataFromListing } from './dto/ListingDataDto';
 
-@Controller('listing')
+@Controller('listings')
 export class ListingController {
   constructor(private readonly listingService: ListingService) {}
 
@@ -30,4 +30,13 @@ export class ListingController {
 
     return dataFromListing(listing);
   }
+
+  // @Get(':id')
+  // @UseGuards(JwtAuthGuard)
+  // async getListing();
+  // const listing = await this.listingService.findOne()
+  // public get value() : string {
+  //   return
+  // }
+  // (createListingDto, user.id);
 }

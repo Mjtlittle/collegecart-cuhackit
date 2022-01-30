@@ -10,6 +10,7 @@ import {
 
 import { Request, Response } from 'express';
 import { JwtAuthGuard } from '../auth/jwt-auth/jwt-auth.guard';
+import { privateDataFromUser, PrivateUserDataDto } from './dto/UserData.dto';
 import { User } from './entities/user.entity';
 import { UsersService } from './users.service';
 
@@ -20,8 +21,9 @@ export class UsersController {
 
   @Get('me')
   @UseGuards(JwtAuthGuard)
-  getMe(@Req() req: Request, @Res() res: Response): any {
-    const user = req.user;
-    return res.status(HttpStatus.OK).json(user);
+  getMe(@Req() req: Request, @Res() res: Response) {
+    const user_data = privateDataFromUser(req.user as User);
+
+    return res.status(HttpStatus.OK).json(user_data);
   }
 }

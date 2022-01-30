@@ -8,7 +8,7 @@ const apiFetch = async (route, options) => {
 };
 
 export const createListing = async (data) =>
-  apiFetch("/listing/create", {
+  apiFetch("/listings/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,7 +17,7 @@ export const createListing = async (data) =>
   });
 
 export const getAllListings = async (data) =>
-  apiFetch("/listing/all", {
+  apiFetch("/listings/all", {
     method: "GET",
   });
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { FindOneOptions, Repository } from 'typeorm';
 import { UsersService } from '../users/users.service';
 import CreateListingDto from './dto/CreateListingDto';
 import { Listing } from './entities/listing.entity';
@@ -12,6 +12,10 @@ export class ListingService {
     private listingRepository: Repository<Listing>,
     private readonly usersService: UsersService,
   ) {}
+
+  async findOne(params: FindOneOptions<Listing> = {}) {
+    return await this.listingRepository.findOne(params);
+  }
 
   async getAll(): Promise<Listing[]> {
     return await this.listingRepository.find({ where: { active: true } });
