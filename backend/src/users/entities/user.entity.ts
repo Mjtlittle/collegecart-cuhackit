@@ -6,7 +6,8 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { Provider } from '../auth/types';
+import { Provider } from '../../auth/types';
+import { Listing } from '../../listing/entities/listing.entity';
 
 @Entity()
 export class User {
@@ -20,10 +21,10 @@ export class User {
   providerId: string;
 
   @Column({ nullable: false })
-  username: string;
+  name: string;
 
   @Column({ nullable: false })
-  name?: string;
+  email: string;
 
   @Column()
   @CreateDateColumn()
@@ -32,4 +33,8 @@ export class User {
   @Column()
   @UpdateDateColumn()
   updated_at: Date;
+
+  // data
+  @OneToMany(() => Listing, (listing) => listing.user)
+  listings: Listing[];
 }

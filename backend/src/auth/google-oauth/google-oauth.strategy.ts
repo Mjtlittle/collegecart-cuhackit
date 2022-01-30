@@ -24,18 +24,17 @@ export class GoogleOauthStrategy extends PassportStrategy(Strategy, 'google') {
     profile: Profile,
   ) {
     const { id, name, emails } = profile;
-    // let user = await this.usersService.findOne({
-    //   where: { provider: 'google', providerId: id },
-    // });
-    // if (!user)
-    //   user = await this.usersService.create({
-    //     provider: 'google',
-    //     providerId: id,
-    //     name: name.givenName,
-    //     username: emails[0].value,
-    //   });
+    let user = await this.usersService.findOne({
+      where: { provider: 'google', providerId: id },
+    });
+    if (!user)
+      user = await this.usersService.create({
+        provider: 'google',
+        providerId: id,
+        name: name.givenName,
+        email: emails[0].value,
+      });
 
-    // return user;
-    return {};
+    return user;
   }
 }

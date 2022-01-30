@@ -8,6 +8,7 @@ import { JwtAuthStrategy } from './jwt-auth.strategy';
 @Module({
   imports: [
     ConfigModule,
+    UsersModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => {

@@ -4,30 +4,24 @@ import {
   Req,
   Res,
   UseGuards,
-  Request,
-  Response,
+  Logger,
+  HttpStatus,
 } from '@nestjs/common';
+
+import { Request, Response } from 'express';
 import { JwtAuthGuard } from '../auth/jwt-auth/jwt-auth.guard';
-import { User } from './user.entity';
+import { User } from './entities/user.entity';
 import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
   constructor(private userService: UsersService) {}
+  private readonly logger = new Logger(UsersController.name);
 
-  @UseGuards(JwtAuthGuard)
   @Get('me')
+  @UseGuards(JwtAuthGuard)
   getMe(@Req() req: Request, @Res() res: Response): any {
-    return;
-  }
-
-  @Get('test')
-  test() {
-    this.userService.create({
-      provider: 'google',
-      providerId: 'a',
-      username: 'test',
-      name: 'test',
-    });
+    const user = req.user;
+    return res.status(HttpStatus.OK).json(user);
   }
 }

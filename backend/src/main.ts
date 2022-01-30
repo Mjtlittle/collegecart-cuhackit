@@ -1,9 +1,21 @@
+import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  app.enableCors();
+  const app = await NestFactory.create(AppModule, {
+    logger: ['log', 'error', 'warn', 'debug', 'verbose'],
+    bufferLogs: true,
+  });
+  app.enableCors({
+    origin: '*',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  });
+  app.useLogger(new Logger());
+  app.use(cookieParser());
+
   await app.listen(3001);
 }
 bootstrap();
