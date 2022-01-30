@@ -1,6 +1,7 @@
 import { Button, Box, VStack, Text } from "@chakra-ui/react";
 import { endpoint } from "../lib/api";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 import { FcGoogle } from "react-icons/fc";
 import { HiShoppingCart } from "react-icons/hi";

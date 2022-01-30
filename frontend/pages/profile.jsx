@@ -1,10 +1,18 @@
-import { HStack, Box, VStack, Text } from "@chakra-ui/react";
+import { HStack, Box, VStack, Text, Button } from "@chakra-ui/react";
 import { useContext } from "react";
 import Page from "../components/Page";
 import { APIContext } from "../lib/api_provider";
 
+import { FiEdit } from "react-icons/fi";
+
 const Profile = () => {
   const { user } = useContext(APIContext);
+
+  const new_listing_button = (
+    <Button leftIcon={<FiEdit />} colorScheme="blue">
+      Create New Listing
+    </Button>
+  );
 
   return (
     <Page title="Profile">
@@ -24,6 +32,7 @@ const Profile = () => {
             {user?.email}
           </Text>
         </VStack>
+        {new_listing_button}
       </VStack>
     </Page>
   );

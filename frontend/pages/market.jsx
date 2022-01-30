@@ -1,7 +1,7 @@
 import MarketItem from "../components/MarketItem";
 import Page from "../components/Page";
 import { Grid } from "@chakra-ui/react";
-import { useContext, useEffect} from "react";
+import { useContext, useEffect } from "react";
 import { APIContext } from "../lib/api_provider";
 import Catbanner from "../components/CatBanner";
 
@@ -14,7 +14,7 @@ const Market = () => {
   return (
     <Page title="CollegeCart">
       <Catbanner></Catbanner>
-        <Grid templateColumns="repeat(2, 1fr)" px="1rem" gap={6} >
+      <Grid templateColumns="repeat(2, 1fr)" gap={6}>
         {listings.map((listing) => {
           return <MarketItem listing={listing}></MarketItem>;
         })}

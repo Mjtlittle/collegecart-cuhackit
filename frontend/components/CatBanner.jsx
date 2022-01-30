@@ -6,9 +6,9 @@ const CatButton = ({ label, href }) => {
   //const ButtonIcon = icon;
   return (
     <NextLink href={href}>
-      <Button variant="ghost" width="20%" height="3rem">
-          {/* <ButtonIcon size="1rem" /> */}
-          <span>{label}</span>
+      <Button display="inline-block" p="1rem" borderRadius="1000" height="3rem">
+        {/* <ButtonIcon size="1rem" /> */}
+        <span>{label}</span>
       </Button>
     </NextLink>
   );
@@ -16,28 +16,35 @@ const CatButton = ({ label, href }) => {
 
 const tabs = [
   { label: "School", href: "/market" },
-  { label: "Living", href: "/market" },
+  { label: "Furniture", href: "/market" },
+  { label: "Clothing", href: "/market" },
+  { label: "Tools", href: "/market" },
+  { label: "Sports", href: "/market" },
   { label: "Electronics", href: "/market" },
-  { label: "Sports", href: "/market"},
-  { label: "Clothing", href: "/market"},
 ];
 
 const Catbanner = () => {
   return (
-    <HStack
+    <Box
       width="100%"
       height="3rem"
-      align="center"
-      justify="space-around"
-      backdropBlur={50}
-      backgroundColor="#ffffffee"
-      top={20}
-      zIndex={10}
+      // overflow="scroll"
+      overflowX="scroll"
+      my="0.5rem"
     >
-      {tabs.map((props, i) => (
-        <CatButton key={i} {...props}></CatButton>
-      ))}
-    </HStack>
+      <HStack
+        display="inline-block"
+        whiteSpace="nowrap"
+        align="center"
+        backdropBlur={50}
+        backgroundColor="#ffffffee"
+        zIndex={10}
+      >
+        {tabs.map((props, i) => (
+          <CatButton key={i} {...props}></CatButton>
+        ))}
+      </HStack>
+    </Box>
   );
 };
 

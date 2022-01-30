@@ -2,16 +2,18 @@ import { Box, HStack, Button, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 import { FaShoppingCart, FaCog } from "react-icons/fa";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const pages = [
+  { icon: AiOutlinePlus, href: "/createlisting" },
   { icon: FaShoppingCart, href: "/" },
   { icon: FaCog, href: "/" },
 ];
 
-const IconButton = ({ icon }) => {
+const IconButton = ({ icon, href }) => {
   const PageIcon = icon;
   return (
-    <NextLink href="/">
+    <NextLink href={href}>
       <Button width="3rem" height="3rem" borderRadius="1000">
         <Box
           position="absolute"
@@ -29,8 +31,8 @@ const IconButton = ({ icon }) => {
 const CornerLinks = () => {
   return (
     <HStack>
-      {pages.map(({ icon, href }) => {
-        return <IconButton icon={icon} href={href}></IconButton>;
+      {pages.map((props) => {
+        return <IconButton {...props}></IconButton>;
       })}
     </HStack>
   );
