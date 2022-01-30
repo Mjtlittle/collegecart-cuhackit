@@ -13,6 +13,7 @@ import {
 import { useEffect } from "react";
 import { Nav } from "../components/Nav";
 import { Listing } from '../components/Listing';
+import { Post } from '../pages/post';
 
 /*const pan = keyframes`
   from { transform: translate(0,0); }
@@ -41,16 +42,17 @@ const index = () => {
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
     >
-      <Image pt={50} src="/images/logo.svg" alt="College Cart" />
+       <Image pt={50} src="/images/logo.svg" alt="College Cart" />
       <Flex pt={150}>
         <Spacer />
         <Link as={ReachLink} to='/home'>
           <Button>Login with Google SSO</Button>
         </Link>
         <Spacer />
-      </Flex>
-      {/* <Listing/> */}
+      </Flex> 
+    {/* <Listing/> */}
     {/* <Nav/> */}
+    {/* <Post/> */}
     </Container>
   );
 };
