@@ -16,10 +16,10 @@ const CatButton = ({ label, href }) => {
 
 const tabs = [
   { label: "School", href: "/market" },
-  { label: "Living", href: "/profile" },
-  { label: "Electronics", href: "/messages" },
-  { label: "Sports", href: "/sports"},
-  { label: "Clothing", href: "/clothing"},
+  { label: "Living", href: "/market" },
+  { label: "Electronics", href: "/market" },
+  { label: "Sports", href: "/market"},
+  { label: "Clothing", href: "/market"},
 ];
 
 const Catbanner = () => {
