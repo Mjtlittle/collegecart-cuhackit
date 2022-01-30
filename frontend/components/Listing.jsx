@@ -1,5 +1,4 @@
 import { Button, Container,Flex, Spacer, Img, Image, Box, Badge } from "@chakra-ui/react";
-import { StarIcon } from '@chakra-ui/icons';
 import React from "react";
 import list from '../public/images/listing1ex.png';
 

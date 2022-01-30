@@ -4,10 +4,10 @@ import { Nav } from '../components/Nav'
 const Post = () => {
   return (
     <>
-      <Container h="90vh" maxW="container.xl" p={6}>
+      <Nav/>
+      <Container h="90vh" maxW="container.xl" px={6} py={2}>
         <Flex py={0}>This is Post</Flex>
       </Container>
-      <Nav/>
     </>
   );
 };

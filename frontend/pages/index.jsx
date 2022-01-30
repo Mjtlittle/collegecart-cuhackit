@@ -7,6 +7,8 @@ import {
   Image,
   Box,
   keyframes,
+  Link,
+  ReachLink
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { Nav } from "../components/Nav";
@@ -42,11 +44,13 @@ const index = () => {
       <Image pt={50} src="/images/logo.svg" alt="College Cart" />
       <Flex pt={150}>
         <Spacer />
-        <Button>Login with Google SSO</Button>
+        <Link as={ReachLink} to='/home'>
+          <Button>Login with Google SSO</Button>
+        </Link>
         <Spacer />
       </Flex>
       {/* <Listing/> */}
-    <Nav/>
+    {/* <Nav/> */}
     </Container>
   );
 };
