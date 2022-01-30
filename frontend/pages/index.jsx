@@ -9,13 +9,14 @@ import {
   keyframes,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
+import { Listing } from './Listing';
 
 /*const pan = keyframes`
   from { transform: translate(0,0); }
   to { transform: translate(-150px, 0); }
 `*/
 
-const Splash = () => {
+const index = () => {
   useEffect(async () => {
     try {
       await fetch("http://localhost:3001/users/me").then((res) => {
@@ -33,18 +34,19 @@ const Splash = () => {
       maxW="container.xl"
       p={6}
       backgroundImage="url('/images/cc_splash.jpg')"
-      backgroundPosition="left"
+      backgroundPosition="35% 50%"
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
     >
-      <Image py={100} src="/images/logo.svg" alt="College Cart" />
-      <Flex py={0}>
+      <Image pt={50} src="/images/logo.svg" alt="College Cart" />
+      <Flex pt={150}>
         <Spacer />
         <Button>Login with Google SSO</Button>
         <Spacer />
       </Flex>
+      {/* <Listing/> */}
     </Container>
   );
 };
 
-export default Splash;
+export default index;
