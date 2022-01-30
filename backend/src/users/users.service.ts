@@ -18,4 +18,8 @@ export class UsersService {
   async findOne(params: FindOneOptions<User> = {}) {
     return await this.usersRepository.findOne(params);
   }
+
+  async getFromId(id: number) {
+    return await this.findOne({ where: { id } });
+  }
 }

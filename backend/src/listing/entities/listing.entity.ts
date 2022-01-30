@@ -21,13 +21,13 @@ export class Listing {
   @Column({ nullable: false })
   title: string;
 
-  @Column({ nullable: false })
+  @Column({ nullable: false, default: '' })
   description?: string;
 
   @Column({ nullable: false })
   starting_price: number;
 
-  @ManyToOne(() => User, (user) => user.listings)
+  @ManyToOne(() => User, (user) => user.listings, { eager: true })
   user: User;
 
   @OneToMany(() => Offer, (offer) => offer.listing)

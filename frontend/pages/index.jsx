@@ -8,29 +8,20 @@ import {
   Box,
   keyframes,
   Link,
-  ReachLink
+  ReachLink,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { Nav } from "../components/Nav";
-import { Listing } from '../components/Listing';
-import { Post } from '../pages/post';
-
+import { Listing } from "../components/Listing";
+import { Post } from "../pages/post";
+import { endpoint } from "../lib/api";
+import NextLink from "next/link";
 /*const pan = keyframes`
   from { transform: translate(0,0); }
   to { transform: translate(-150px, 0); }
 `*/
 
-const index = () => {
-  useEffect(async () => {
-    try {
-      await fetch("http://localhost:3001/users/me").then((res) => {
-        res.json();
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }, []);
-
+const Splash = () => {
   //const moveAnimation = `${pan} infinite 5s linear`;
   return (
     <Container
@@ -42,19 +33,19 @@ const index = () => {
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
     >
-       <Image pt={50} src="/images/logo.svg" alt="College Cart" />
+      <Image pt={50} src="/images/logo.svg" alt="College Cart" />
       <Flex pt={150}>
         <Spacer />
-        <Link as={ReachLink} to='/home'>
+        <NextLink href={`${endpoint}/auth/google`}>
           <Button>Login with Google SSO</Button>
-        </Link>
+        </NextLink>
         <Spacer />
-      </Flex> 
-    {/* <Listing/> */}
-    {/* <Nav/> */}
-    {/* <Post/> */}
+      </Flex>
+      {/* <Listing/> */}
+      {/* <Nav/> */}
+      {/* <Post/> */}
     </Container>
   );
 };
 
-export default index;
+export default Splash;

@@ -9,8 +9,8 @@ async function bootstrap() {
     bufferLogs: true,
   });
   app.enableCors({
-    origin: '*',
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: ['http://127.0.0.1:3000'],
+    // allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   });
   app.useLogger(new Logger());
