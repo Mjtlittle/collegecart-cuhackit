@@ -19,7 +19,6 @@ import React from "react";
 import { Nav } from '../components/Nav'
 
 const Post = () => {
-
   return (
     <>
       <Nav/>
@@ -48,4 +47,4 @@ const Post = () => {
   );
 };
 
-export {Post};
+export default Post;
