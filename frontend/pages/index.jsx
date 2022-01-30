@@ -9,7 +9,7 @@ import {
   keyframes,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
-import { Listing } from './Listing';
+import { Listing } from '../components/Listing';
 
 /*const pan = keyframes`
   from { transform: translate(0,0); }
