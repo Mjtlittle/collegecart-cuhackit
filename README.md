@@ -1,8 +1,10 @@
 # CollegeCart
 
+_(this is an unfinished prototype made during the CUHackit 2022)_
+
 A platform to buy and sell stuff from fellow students. Reduces waste and supports community-based commerce while providing a safer avenue for students to buy used goods.
 
-_this is an unfinished prototype made during the CUHackit 2022_
+
 
 <p align="center">
 <img src="./screenshots/splash.png" height=400 alt="splash screen"/>
